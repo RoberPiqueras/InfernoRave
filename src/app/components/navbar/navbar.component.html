@@ -1,0 +1,77 @@
+<nav class="inferno-navbar">
+
+  <div class="navbar-bg-effect"></div>
+  
+  <div class="nav-container">
+
+    <a routerLink="/" class="logo-link">
+      <div class="logo-fire-effect"></div>
+      <span class="logo-text">
+        <span class="fire-text" id="inferno-text">INFERNO</span>
+        <span class="neon-text" id="rave-text">RAVE</span>
+      </span>
+      <div class="logo-sparks"></div>
+    </a>
+    
+
+    <div class="nav-menu">
+      <a routerLink="/" 
+         routerLinkActive="active-link" 
+         [routerLinkActiveOptions]="{exact: true}" 
+         class="nav-link">
+        <span class="link-text">INICIO</span>
+        <span class="link-flame"></span>
+      </a>
+      
+      <a routerLink="/tickets" routerLinkActive="active-link" class="nav-link">
+        <span class="link-text">ENTRADAS</span>
+        <span class="link-flame"></span>
+      </a>
+      
+      <a routerLink="/gallery" routerLinkActive="active-link" class="nav-link">
+        <span class="link-text">GALERÍA</span>
+        <span class="link-flame"></span>
+      </a>
+      
+      <a routerLink="/contact" routerLinkActive="active-link" class="nav-link">
+        <span class="link-text">CONTACTO</span>
+        <span class="link-flame"></span>
+      </a>
+    </div>
+    
+
+    <button class="mobile-menu-button" (click)="toggleMenu()" aria-label="Menú">
+      <div class="menu-icon">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </div>
+    </button>
+  </div>
+
+  <div class="mobile-menu-wrapper" [class.active]="menuOpen">
+    <div class="mobile-menu-flames"></div>
+    <div class="mobile-menu">
+      <a routerLink="/" (click)="closeMenu()" class="mobile-link">
+        <span class="mobile-link-flame">🔥</span>
+        <span class="mobile-link-text">INICIO</span>
+      </a>
+      <a routerLink="/lineup" (click)="closeMenu()" class="mobile-link">
+        <span class="mobile-link-flame">🔥</span>
+        <span class="mobile-link-text">LINEUP</span>
+      </a>
+      <a routerLink="/tickets" (click)="closeMenu()" class="mobile-link">
+        <span class="mobile-link-flame">🔥</span>
+        <span class="mobile-link-text">ENTRADAS</span>
+      </a>
+      <a routerLink="/gallery" (click)="closeMenu()" class="mobile-link">
+        <span class="mobile-link-flame">🔥</span>
+        <span class="mobile-link-text">GALERÍA</span>
+      </a>
+      <a routerLink="/contact" (click)="closeMenu()" class="mobile-link">
+        <span class="mobile-link-flame">🔥</span>
+        <span class="mobile-link-text">CONTACTO</span>
+      </a>
+    </div>
+  </div>
+</nav>

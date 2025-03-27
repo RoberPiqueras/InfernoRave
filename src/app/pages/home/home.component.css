@@ -1,0 +1,49 @@
+
+.inferno-home {
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  background: #0a0a0a;
+  min-height: 100vh;
+}
+
+
+.inferno-navbar {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+/* ===== HERO SECTION ===== */
+.home-hero {
+  height: 100vh;
+  background: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-title {
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+.flaming-text {
+  background: linear-gradient(to right, #ff8a00, #ff4500);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: flame 2s infinite alternate;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes flame {
+  0% { text-shadow: 0 0 5px #ff8a00; }
+  100% { text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500; }
+}
+
+
+@media (max-width: 768px) {
+  .hero-title {
+      font-size: 3rem;
+  }
+}
