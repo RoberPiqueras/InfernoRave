@@ -1,43 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { EntradasService } from './entradas.service'; // Asegúrate de que la ruta sea correcta
+import { FirebaseService } from '../../services/firebase.service';
 
 @Component({
   selector: 'app-entradas',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule],
   templateUrl: './entradas.component.html',
   styleUrls: ['./entradas.component.css']
 })
 export class EntradasComponent implements OnInit {
-  entradas: any[] = [];
-  loading: boolean = true;
-  error: string | null = null;
+  entradas: any[] = []; // Almacena las entradas obtenidas de Firebase
 
-  constructor(private entradasService: EntradasService) {}
+  constructor(private firebaseService: FirebaseService) {}
 
   ngOnInit(): void {
-    this.cargarEntradas();
-  }
-
-  cargarEntradas(): void {
-    this.entradasService.obtenerEntradas().subscribe({
-      next: (data) => {
-        this.entradas = data;
-        this.loading = false;
+    // Obtener las entradas desde Firebase
+    this.firebaseService.getEntradas().subscribe(
+      (data) => {
+        this.entradas = data; // Asignar los datos obtenidos
       },
-      error: (err) => {
-        this.error = 'Error al cargar las entradas';
-        this.loading = false;
-        console.error('Error:', err);
+      (error) => {
+        console.error('Error al obtener las entradas:', error);
       }
-    });
+    );
   }
 
   comprarEntrada(entrada: any): void {
-    // Implementa la lógica para comprar una entrada
-    console.log('Comprando entrada:', entrada);
-    // Aquí podrías redirigir al checkout o abrir un modal
+    console.log('Entrada comprada:', entrada);
   }
 }

@@ -22,11 +22,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  isScrolled = false;
-  mobileMenuOpen = false;
-  isLoggedIn = false;
-  userData: any = null;
+  isScrolled = false; // Indica si la página está desplazada
+  mobileMenuOpen = false; // Controla si el menú móvil está abierto
+  isLoggedIn = false; // Indica si el usuario ha iniciado sesión
+  userData: any = null; // Datos del usuario (si es necesario)
 
+  // Elementos del menú de navegación
   navItems = [
     { path: '/', label: 'INICIO', icon: 'home' },
     { path: '/entradas', label: 'ENTRADAS', icon: 'confirmation_number' },
@@ -36,11 +37,13 @@ export class NavbarComponent {
 
   constructor(private dialog: MatDialog) {}
 
+  // Detecta el desplazamiento de la ventana para cambiar el estado de la barra de navegación
   @HostListener('window:scroll')
   onWindowScroll() {
     this.isScrolled = window.scrollY > 50;
   }
 
+  // Alterna el estado del menú móvil
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
     document.body.style.overflow = this.mobileMenuOpen ? 'hidden' : '';
