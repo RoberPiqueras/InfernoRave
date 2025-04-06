@@ -16,7 +16,7 @@
       <nav class="navbar-nav me-auto my-2 my-lg-0">
         <div class="d-flex flex-column flex-lg-row gap-3">
           <a *ngFor="let item of navItems" 
-             routerLink="{{item.path}}" 
+             [routerLink]="item.path" 
              routerLinkActive="active"
              class="nav-link d-flex align-items-center px-3"
              [matTooltip]="item.label"
@@ -35,7 +35,7 @@
   <div class="mobile-menu-content">
     <nav class="mobile-nav d-flex flex-column gap-3 p-4">
       <ng-container *ngFor="let item of navItems">
-        <a routerLink="{{item.path}}" 
+        <a [routerLink]="item.path" 
            (click)="toggleMobileMenu()" 
            routerLinkActive="active"
            class="mobile-nav-link d-flex align-items-center p-3 rounded">
