@@ -1,0 +1,18 @@
+
+
+<div class="container my-5">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let entrada of entradas">
+        <div class="card" style="width: 18rem;">
+          <img src="{{ entrada.imagen }}" class="card-img-top" alt="Imagen entrada">
+          <div class="card-body">
+            <h5 class="card-title">{{ entrada.nombre }}</h5>
+            <p class="card-text">{{ entrada.descripcion }}</p>
+            <p class="card-text"><strong>Fecha: </strong>{{ entrada.fecha }}</p>
+            <a href="#" class="btn btn-primary" (click)="comprarEntrada(entrada)">Comprar Entrada</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
