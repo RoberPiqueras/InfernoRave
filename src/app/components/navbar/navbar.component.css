@@ -1,83 +1,48 @@
-
-@use '@angular/material' as mat;
-
-
+/* General navbar styles */
 .navbar {
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 10, 10, 0.5); /* Fondo transparente al 50% */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  transition: all 0.3s ease; /* Transición suave */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Línea inferior */
   padding: 0.5rem 0;
+}
 
-  &.scrolled {
-    background: rgba(20, 20, 20, 0.95);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    padding: 0.25rem 0;
+.navbar.scrolled {
+  background: rgba(20, 20, 20, 0.95); /* Fondo más sólido al hacer scroll */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+  padding: 0.25rem 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 50px; /* Altura del logo */
+  width: auto; /* Mantener proporción */
+  max-width: 150px; /* Ancho máximo */
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ff5722 !important;
   }
 
-  .navbar-brand {
-    .logo-fire {
-      font-size: 1.8rem;
-      animation: flicker 3s infinite alternate;
-    }
-
-    .logo-text {
-      line-height: 1;
-
-      .logo-inferno {
-        color: #ff5722;
-        text-shadow: 0 0 10px #ff5722;
-        font-size: 1.5rem;
-        font-weight: 900;
-        letter-spacing: 1px;
-      }
-
-      .logo-rave {
-        color: #00bcd4;
-        text-shadow: 0 0 10px #00bcd4;
-        font-size: 1.2rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-      }
-    }
-  }
-
-  .navbar-toggler {
-    border: none;
-    color: white;
-    padding: 0.5rem;
-    margin-left: auto;
-  }
-
-  .nav-link {
-    color: white !important;
-    font-weight: 500;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.1) !important;
-      color: #ff5722 !important;
-    }
-
-    &.active {
-      color: #ff5722 !important;
-      background: rgba(255, 87, 34, 0.1) !important;
-      border-bottom: 2px solid #ff5722;
-    }
-  }
-
-  .user-actions {
-    .btn {
-      font-weight: 600;
-      letter-spacing: 1px;
-      padding: 0.5rem 1rem;
-    }
+  &.active {
+    color: #ff5722 !important;
+    background: rgba(255, 87, 34, 0.1) !important;
+    border-bottom: 2px solid #ff5722;
   }
 }
 
-/* Menú móvil */
 .mobile-menu-backdrop {
   position: fixed;
   top: 0;
@@ -94,6 +59,39 @@
     opacity: 1;
     visibility: visible;
   }
+}
+
+/* Botones de Iniciar Sesión y Registrarse */
+.btn {
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary {
+  color: #ff5722;
+  border: 1px solid #ff5722;
+
+  &:hover {
+    background: #ff5722;
+    color: white;
+  }
+}
+
+.btn-primary {
+  background: #ff5722;
+  color: white;
+
+  &:hover {
+    background: #e64a19;
+  }
+}
+
+/* Ajustes para el menú móvil */
+.mobile-menu .btn {
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 .mobile-menu {
@@ -123,66 +121,12 @@
     text-decoration: none;
     background: rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
 
     &:hover, &.active {
       background: rgba(255, 87, 34, 0.1) !important;
       color: #ff5722 !important;
     }
-
-    mat-icon {
-      font-size: 1.5rem;
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  .mobile-user-actions {
-    background: rgba(0, 0, 0, 0.2);
-
-    .btn {
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-  }
-}
-
-/* Animaciones */
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-    text-shadow: 0 0 10px #ff5722;
-  }
-  20%, 24%, 55% {
-    opacity: 0.8;
-    text-shadow: none;
-  }
-}
-
-/* Media queries */
-@media (max-width: 992px) {
-  .navbar {
-    .navbar-collapse {
-      display: none;
-    }
-  }
-}
-
-@media (max-width: 576px) {
-  .navbar {
-    .navbar-brand {
-      .logo-inferno {
-        font-size: 1.3rem;
-      }
-      .logo-rave {
-        font-size: 1rem;
-      }
-      .logo-fire {
-        font-size: 1.5rem;
-      }
-    }
-  }
-
-  .mobile-menu {
-    width: 280px;
   }
 }
