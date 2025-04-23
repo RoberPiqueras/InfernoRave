@@ -16,5 +16,17 @@ html, body {
   
   router-outlet {
     flex: 1;
+    display: block;
+    margin-top: 70px; /* Ajusta según la altura del navbar */
   }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px; /* Ajusta según la altura del navbar */
+}
+
+html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

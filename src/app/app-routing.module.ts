@@ -1,9 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { routes } from './app.routes';  // Importa las rutas definidas en routes.ts
+import { HomeComponent } from './pages/home/home.component';
+import { EntradasComponent } from './pages/entradas/entradas.component';
+import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'entradas', component: EntradasComponent },
+  { path: 'sobre-nosotros', component: SobreNosotrosComponent },
+  { path: 'contacto', component: ContactoComponent },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],  // Configura el enrutamiento
-  exports: [RouterModule]  // Exporta el RouterModule para usarlo en todo el app
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

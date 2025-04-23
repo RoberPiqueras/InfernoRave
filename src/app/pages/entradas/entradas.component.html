@@ -1,76 +1,21 @@
-<header class="navbar navbar-expand-lg fixed-top" [class.scrolled]="isScrolled" [class.mobile-open]="mobileMenuOpen">
-  <div class="container-fluid px-4 py-2">
-    <!-- Logo como imagen -->
-    <a routerLink="/" class="navbar-brand d-flex align-items-center me-5" aria-label="Inferno Rave Home">
-      <img src="assets/logo.png" alt="Inferno Rave Logo" class="logo-img">
-    </a>
 
-    <!-- Botón para menú móvil -->
-    <button class="navbar-toggler" type="button" (click)="toggleMobileMenu()" aria-label="Menú móvil">
-      <mat-icon>{{mobileMenuOpen ? 'close' : 'menu'}}</mat-icon>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <div class="vr d-none d-lg-flex mx-4 bg-secondary opacity-50"></div>
-      <nav class="navbar-nav me-auto my-2 my-lg-0">
-        <div class="d-flex flex-column flex-lg-row gap-3">
-          <!-- Enlace a Home -->
-          <a routerLink="/home" routerLinkActive="active" class="nav-link d-flex align-items-center px-3" matTooltip="Home" matTooltipPosition="below">
-            <mat-icon class="me-2">home</mat-icon>
-            <span>Home</span>
-          </a>
-          <!-- Enlace a Entradas -->
-          <a routerLink="/entradas" routerLinkActive="active" class="nav-link d-flex align-items-center px-3" matTooltip="Entradas" matTooltipPosition="below">
-            <mat-icon class="me-2">confirmation_number</mat-icon>
-            <span>Entradas</span>
-          </a>
-          <!-- Enlace a Sobre Nosotros -->
-          <a routerLink="/sobre-nosotros" routerLinkActive="active" class="nav-link d-flex align-items-center px-3" matTooltip="Sobre Nosotros" matTooltipPosition="below">
-            <mat-icon class="me-2">groups</mat-icon>
-            <span>Sobre Nosotros</span>
-          </a>
-          <!-- Enlace a Contacto -->
-          <a routerLink="/contacto" routerLinkActive="active" class="nav-link d-flex align-items-center px-3" matTooltip="Contacto" matTooltipPosition="below">
-            <mat-icon class="me-2">mail</mat-icon>
-            <span>Contacto</span>
-          </a>
-        </div>
-      </nav>
-
-      <!-- Botones de Iniciar Sesión y Registrarse -->
-      <div class="d-flex gap-3">
-        <a routerLink="/login" class="btn btn-outline-primary">Iniciar Sesión</a>
-        <a routerLink="/registro" class="btn btn-primary">Registrarse</a>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="mobile-menu-backdrop" [class.show]="mobileMenuOpen" (click)="toggleMobileMenu()"></div>
-<div class="mobile-menu" [class.show]="mobileMenuOpen">
-  <div class="mobile-menu-content">
-    <nav class="mobile-nav d-flex flex-column gap-3 p-4">
-      <!-- Enlaces del menú móvil -->
-      <a routerLink="/home" (click)="toggleMobileMenu()" routerLinkActive="active" class="mobile-nav-link d-flex align-items-center p-3 rounded">
-        <mat-icon class="me-3">home</mat-icon>
-        <span>Home</span>
-      </a>
-      <a routerLink="/entradas" (click)="toggleMobileMenu()" routerLinkActive="active" class="mobile-nav-link d-flex align-items-center p-3 rounded">
-        <mat-icon class="me-3">confirmation_number</mat-icon>
-        <span>Entradas</span>
-      </a>
-      <a routerLink="/sobre-nosotros" (click)="toggleMobileMenu()" routerLinkActive="active" class="mobile-nav-link d-flex align-items-center p-3 rounded">
-        <mat-icon class="me-3">groups</mat-icon>
-        <span>Sobre Nosotros</span>
-      </a>
-      <a routerLink="/contacto" (click)="toggleMobileMenu()" routerLinkActive="active" class="mobile-nav-link d-flex align-items-center p-3 rounded">
-        <mat-icon class="me-3">mail</mat-icon>
-        <span>Contacto</span>
-      </a>
-
-      <!-- Botones de Iniciar Sesión y Registrarse en el menú móvil -->
-      <a routerLink="/login" (click)="toggleMobileMenu()" class="btn btn-outline-primary mt-3">Iniciar Sesión</a>
-      <a routerLink="/registro" (click)="toggleMobileMenu()" class="btn btn-primary mt-2">Registrarse</a>
-    </nav>
-  </div>
-</div>
+<div class="espacio"></div>
+<div class="entradas-container">
+  <h1>Entradas</h1>
+  <ul class="entradas-list">
+    <li>
+      <span class="icon">🏠</span>
+      Inicio
+    </li>
+    <li>
+      <span class="icon">🎟️</span>
+      Confirmación
+    </li>
+    <li>
+      <span class="icon">👥</span>
+      Grupos
+    </li>
+    <li>
+      <span class="icon">📅</span>
+      Calendario
+    </li>

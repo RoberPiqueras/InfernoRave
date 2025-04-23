@@ -1,23 +1,21 @@
-import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-//import { environment } from '../environments/environment'; // Asegúrate de que la ruta sea correcta 
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-import { AppComponent } from './app.component';
+
+// import { environment } from '../environments/environment'; // Asegúrate de que la ruta sea correcta 
+
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+
   imports: [
     BrowserModule,
     HttpClientModule,
-    //AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule 
+    AppComponent // Asegúrate de que AppComponent esté importado aquí
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA] // Agregar este esquema
 })
-export class AppModule {}
+export class AppModule { }
