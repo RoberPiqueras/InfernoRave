@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Evento } from '../interfaces/producto'; // Ajustada la ruta relativa
+import { Evento } from '../interfaces/entrada'; // Ajustada la ruta relativa
 
 @Injectable({
   providedIn: 'root'

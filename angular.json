@@ -34,8 +34,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
