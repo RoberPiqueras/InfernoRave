@@ -1,108 +1,111 @@
-<div class="container my-5" *ngIf="entradaData">
-  <div class="row">
-    <!-- Columna principal con el detalle de la entrada -->
-    <div class="col-md-10 col-lg-8 mx-auto">
-      <!-- Título -->
-      <h1 class="text-center text-uppercase mb-4 display-4 font-weight-bold" style="color: #FF6347;">
-        {{ entradaData.title }}
-      </h1>
-
-      <!-- Imagen de la entrada (puedes poner una URL de imagen aquí) -->
-      <div class="mb-4">
-        <img src="https://via.placeholder.com/900x300?text=Imagen+Entrada" class="img-fluid rounded shadow-lg" alt="{{ entradaData.title }}">
-      </div>
-
-      <!-- Descripción de la entrada con animación -->
-      <div class="card shadow-lg border-0 mb-5">
-        <div class="card-body">
-          <p class="card-text text-justify" style="font-size: 1.2rem; line-height: 1.8; color: #555;">
-            {{ entradaData.description }}
-          </p>
+<body>
+  <div class="container my-5" *ngIf="entradaData">
+    <div class="row">
+      <!-- Columna principal con el detalle de la entrada -->
+      <div class="col-md-10 col-lg-8 mx-auto">
+        <!-- Título -->
+        <h1 class="text-center text-uppercase mb-4 display-4 font-weight-bold" style="color: #FF6347;">
+          {{ entradaData.title }}
+        </h1>
+  
+        <!-- Imagen de la entrada (puedes poner una URL de imagen aquí) -->
+        <div class="mb-4">
+          <img src="https://via.placeholder.com/900x300?text=Imagen+Entrada" class="img-fluid rounded shadow-lg" alt="{{ entradaData.title }}">
         </div>
-      </div>
-
-      <!-- Sección de Testimonios -->
-      <div class="mb-5">
-        <h2 class="text-center mb-4">Lo que dicen los asistentes</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card shadow-sm mb-4">
-              <div class="card-body">
-                <p class="card-text">"¡Fue una experiencia increíble! No puedo esperar para la próxima edición."</p>
-                <footer class="blockquote-footer">Juan Pérez</footer>
+  
+        <!-- Descripción de la entrada con animación -->
+        <div class="card shadow-lg border-0 mb-5">
+          <div class="card-body">
+            <p class="card-text text-justify" style="font-size: 1.2rem; line-height: 1.8; color: #555;">
+              {{ entradaData.description }}
+            </p>
+          </div>
+        </div>
+  
+        <!-- Sección de Testimonios -->
+        <div class="mb-5">
+          <h2 class="text-center mb-4">Lo que dicen los asistentes</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                  <p class="card-text">"¡Fue una experiencia increíble! No puedo esperar para la próxima edición."</p>
+                  <footer class="blockquote-footer">Juan Pérez</footer>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                  <p class="card-text">"La mejor fiesta a la que he asistido. Todo estuvo perfectamente organizado."</p>
+                  <footer class="blockquote-footer">Laura Sánchez</footer>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                  <p class="card-text">"Increíblemente bien ambientado y con la mejor música. ¡Totalmente recomendable!"</p>
+                  <footer class="blockquote-footer">Carlos Martínez</footer>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card shadow-sm mb-4">
-              <div class="card-body">
-                <p class="card-text">"La mejor fiesta a la que he asistido. Todo estuvo perfectamente organizado."</p>
-                <footer class="blockquote-footer">Laura Sánchez</footer>
-              </div>
+        </div>
+  
+        <!-- Galería de imágenes -->
+        <div class="mb-5">
+          <h2 class="text-center mb-4">Galería de la Entrada</h2>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <img src="https://via.placeholder.com/400x250?text=Imagen+1" class="img-fluid rounded shadow-lg" alt="Imagen 1">
+            </div>
+            <div class="col-md-4 mb-3">
+              <img src="https://via.placeholder.com/400x250?text=Imagen+2" class="img-fluid rounded shadow-lg" alt="Imagen 2">
+            </div>
+            <div class="col-md-4 mb-3">
+              <img src="https://via.placeholder.com/400x250?text=Imagen+3" class="img-fluid rounded shadow-lg" alt="Imagen 3">
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card shadow-sm mb-4">
-              <div class="card-body">
-                <p class="card-text">"Increíblemente bien ambientado y con la mejor música. ¡Totalmente recomendable!"</p>
-                <footer class="blockquote-footer">Carlos Martínez</footer>
-              </div>
-            </div>
+        </div>
+  
+        <!-- Información adicional -->
+        <div class="card shadow-lg border-0 mb-5">
+          <div class="card-body">
+            <h3 class="card-title text-center mb-3">Más sobre la Entrada</h3>
+            <p class="card-text" style="font-size: 1.2rem; color: #555;">
+              En esta edición de la entrada, hemos traído un montón de artistas nuevos y una experiencia
+              de música completamente innovadora. Conciertos en vivo, DJ sets, y mucho más. ¡No te lo puedes perder!
+            </p>
           </div>
         </div>
-      </div>
-
-      <!-- Galería de imágenes -->
-      <div class="mb-5">
-        <h2 class="text-center mb-4">Galería de la Entrada</h2>
-        <div class="row">
-          <div class="col-md-4 mb-3">
-            <img src="https://via.placeholder.com/400x250?text=Imagen+1" class="img-fluid rounded shadow-lg" alt="Imagen 1">
-          </div>
-          <div class="col-md-4 mb-3">
-            <img src="https://via.placeholder.com/400x250?text=Imagen+2" class="img-fluid rounded shadow-lg" alt="Imagen 2">
-          </div>
-          <div class="col-md-4 mb-3">
-            <img src="https://via.placeholder.com/400x250?text=Imagen+3" class="img-fluid rounded shadow-lg" alt="Imagen 3">
+  
+        <!-- Mapa interactivo (si es relevante) -->
+        <div class="mb-5">
+          <h2 class="text-center mb-4">Ubicación del Evento</h2>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.645945418625!2d-0.1277581840345261!3d51.50735177963369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b28cbddc6b9%3A0x1c4b44f4b524e3a9!2sBig+Ben!5e0!3m2!1ses!2ses!4v1682664635284!5m2!1ses!2ses" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
-      </div>
-
-      <!-- Información adicional -->
-      <div class="card shadow-lg border-0 mb-5">
-        <div class="card-body">
-          <h3 class="card-title text-center mb-3">Más sobre la Entrada</h3>
-          <p class="card-text" style="font-size: 1.2rem; color: #555;">
-            En esta edición de la entrada, hemos traído un montón de artistas nuevos y una experiencia
-            de música completamente innovadora. Conciertos en vivo, DJ sets, y mucho más. ¡No te lo puedes perder!
-          </p>
+  
+        <!-- Botón de volver a la página de entradas -->
+        <div class="mt-4 text-center">
+          <button class="btn btn-lg btn-danger rounded-pill shadow-sm px-4 py-2" (click)="goBack()">
+            <i class="fas fa-arrow-left"></i> Volver a Entradas
+          </button>
         </div>
-      </div>
-
-      <!-- Mapa interactivo (si es relevante) -->
-      <div class="mb-5">
-        <h2 class="text-center mb-4">Ubicación del Evento</h2>
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.645945418625!2d-0.1277581840345261!3d51.50735177963369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b28cbddc6b9%3A0x1c4b44f4b524e3a9!2sBig+Ben!5e0!3m2!1ses!2ses!4v1682664635284!5m2!1ses!2ses" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-
-      <!-- Botón de volver a la página de entradas -->
-      <div class="mt-4 text-center">
-        <button class="btn btn-lg btn-danger rounded-pill shadow-sm px-4 py-2" (click)="goBack()">
-          <i class="fas fa-arrow-left"></i> Volver a Entradas
-        </button>
       </div>
     </div>
   </div>
-</div>
-
-<!-- Si no se encuentra la entrada -->
-<div *ngIf="!entradaData" class="container my-5">
-  <div class="alert alert-warning text-center alert-dismissible fade show" role="alert">
-    <strong>Oops!</strong> Entrada no encontrada. Por favor, vuelve a intentar.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
+  
+  <!-- Si no se encuentra la entrada -->
+  <div *ngIf="!entradaData" class="container my-5">
+    <div class="alert alert-warning text-center alert-dismissible fade show" role="alert">
+      <strong>Oops!</strong> Entrada no encontrada. Por favor, vuelve a intentar.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
   </div>
-</div>
+  
+</body>
