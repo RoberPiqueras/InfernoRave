@@ -1,74 +1,32 @@
 [
   {
     "id": 1,
-    "title": "Entrada 1 - Inferno Rave",
-    "description": "¡Prepárate para una noche épica en Inferno Rave! Con la mejor música electrónica, luces impresionantes y una experiencia que nunca olvidarás.",
-    "image": "https://via.placeholder.com/900x300?text=Entrada+1",
-    "testimonials": [
-      {
-        "author": "Juan Pérez",
-        "text": "¡Fue una experiencia increíble! No puedo esperar para la próxima edición."
-      },
-      {
-        "author": "Laura Sánchez",
-        "text": "La mejor fiesta a la que he asistido. Todo estuvo perfectamente organizado."
-      }
-    ]
+    "title": "Entrada 1",
+    "description": "Descripción detallada de la Entrada 1",
+    "image": "https://via.placeholder.com/900x300?text=Imagen+Entrada+1"
   },
   {
     "id": 2,
-    "title": "Entrada 2 - Inferno Rave",
-    "description": "Disfruta de una fiesta sin igual con artistas internacionales y un ambiente lleno de energía. Esta entrada te llevará directamente al corazón de la fiesta.",
-    "image": "https://via.placeholder.com/900x300?text=Entrada+2",
-    "testimonials": [
-      {
-        "author": "Carlos Martínez",
-        "text": "Increíblemente bien ambientado y con la mejor música. ¡Totalmente recomendable!"
-      }
-    ]
+    "title": "Entrada 2",
+    "description": "Descripción detallada de la Entrada 2",
+    "image": "https://via.placeholder.com/900x300?text=Imagen+Entrada+2"
   },
   {
     "id": 3,
-    "title": "Entrada 3 - Inferno Rave",
-    "description": "Vive la experiencia más exclusiva en Inferno Rave. Accede a áreas VIP, servicios exclusivos y una vista privilegiada de todo el evento.",
-    "image": "https://via.placeholder.com/900x300?text=Entrada+3",
-    "testimonials": [
-      {
-        "author": "Alejandra Gómez",
-        "text": "¡Me encantó! Acceder a las zonas VIP y tener un trato especial hizo que mi experiencia fuera única."
-      },
-      {
-        "author": "Pedro Ruiz",
-        "text": "Sin duda, una experiencia de otro nivel. ¡El ambiente fue increíble!"
-      }
-    ]
+    "title": "Entrada 3",
+    "description": "Descripción detallada de la Entrada 3",
+    "image": "https://via.placeholder.com/900x300?text=Imagen+Entrada+3"
   },
   {
     "id": 4,
-    "title": "Entrada 4 - Inferno Rave",
-    "description": "Si te consideras un verdadero amante de la música electrónica, esta es tu oportunidad. No te pierdas este evento único con los mejores DJs del mundo.",
-    "image": "https://via.placeholder.com/900x300?text=Entrada+4",
-    "testimonials": [
-      {
-        "author": "Marta López",
-        "text": "Una de las mejores fiestas a las que he asistido. La música, el ambiente y la gente fueron espectaculares."
-      }
-    ]
+    "title": "Entrada 4",
+    "description": "Descripción detallada de la Entrada 4",
+    "image": "https://via.placeholder.com/900x300?text=Imagen+Entrada+4"
   },
   {
     "id": 5,
-    "title": "Entrada 5 - Inferno Rave",
-    "description": "Disfruta de un evento exclusivo con acceso limitado a la zona premium. Vive el show desde otro ángulo y disfruta de beneficios exclusivos.",
-    "image": "https://via.placeholder.com/900x300?text=Entrada+5",
-    "testimonials": [
-      {
-        "author": "Ricardo Fernández",
-        "text": "Si buscas una experiencia premium, esta es la entrada que necesitas. ¡Vale totalmente la pena!"
-      },
-      {
-        "author": "Sofía Hernández",
-        "text": "El acceso a las zonas premium hizo que mi experiencia fuera aún más impresionante. Sin duda, repetiré."
-      }
-    ]
+    "title": "Entrada 5",
+    "description": "Descripción detallada de la Entrada 5",
+    "image": "https://via.placeholder.com/900x300?text=Imagen+Entrada+5"
   }
 ]

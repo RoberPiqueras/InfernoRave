@@ -14,6 +14,7 @@ import { EntradasComponent } from './pages/entradas/entradas.component';
 import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import { EntradaService } from './entradas.service';
 
 @NgModule({
   imports: [
@@ -31,7 +32,7 @@ import { RegistroComponent } from './pages/registro/registro.component';
     LoginComponent,
     RegistroComponent
   ],
-  providers: [],
+  providers: [EntradaService],
   schemas: [] // Asegúrate de que el componente principal sea el AppComponent
 })
 export class AppModule { }

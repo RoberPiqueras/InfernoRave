@@ -1,18 +1,25 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // Importa Router para la navegación
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { EntradasService, Entrada } from '../../entradas.service'; // Asegúrate de importar el servicio
 
 @Component({
   selector: 'app-entradas',
-  standalone: true,
   templateUrl: './entradas.component.html',
   styleUrls: ['./entradas.component.css']
 })
-export class EntradasComponent {
+export class EntradasComponent implements OnInit {
+  entradas: Entrada[] = [];  // Para almacenar las entradas cargadas desde el JSON
 
-  constructor(private router: Router) {}
+  constructor(private entradasService: EntradasService, private router: Router) {}
 
-  // Función para manejar la navegación
-  navigateToEntrada(id: number) {
-    this.router.navigate(['/entrada', id]); // Navega a /entrada/{id}
+  ngOnInit(): void {
+    this.entradasService.getEntradas().subscribe(entradas => {
+      this.entradas = entradas; // Asignamos las entradas cargadas al array
+    });
+  }
+
+  // Función para redirigir al detalle de la entrada seleccionada
+  irAEntrada(id: number): void {
+    this.router.navigate([`/entrada/${id}`]);  // Navegar a la página de detalle de entrada con el ID
   }
 }
