@@ -1,123 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entradas | INFERNO RAVE</title>
-  <!-- Enlazamos el CSS de Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  <style>
-    .bebas-font {
-      font-family: 'Bebas Neue', sans-serif;
-    }
-    .countdown p {
-      font-size: 30px;
-      font-weight: bold;
-      color: #ff4500;
-    }
-    .event-box {
-      background-color: #333;
-      color: white;
-      padding: 15px;
-      border-radius: 5px;
-      text-align: center;
-    }
-    .event-box h4 {
-      font-size: 18px;
-      color: #ff4500;
-    }
-    .event-image img {
-      width: 100%;
-      border-radius: 5px;
-    }
-  </style>
-</head>
-<body style="background-color: #2f2f2f;">
-
-  <!-- Sección de fiesta principal -->
-  <div class="container my-5" id="main-event">
-    <div class="row">
-      <div class="col-md-6 event-image">
-        <img src="" alt="Imagen Fiesta" class="img-fluid">
-      </div>
-      <div class="col-md-6 event-details">
-        <h1 class="bebas-font text-white">Fiesta Principal</h1>
-        <p class="text-white">¡No te pierdas la fiesta más esperada del año!</p>
-        <div class="countdown">
-          <p>00:00:00</p>
-        </div>
-        <div class="ticket-info">
-          <a href="#" class="btn btn-warning btn-lg">Comprar Entradas</a>
-        </div>
-      </div>
+<!-- entradas.component.html -->
+<div class="entradas-container">
+    <h1>Selecciona una Entrada</h1>
+    
+    <!-- Botones para redirigir a cada entrada -->
+    <div class="entradas-list">
+      <button class="entrada-btn" (click)="navigateToEntrada(1)">Entrada 1</button>
+      <button class="entrada-btn" (click)="navigateToEntrada(2)">Entrada 2</button>
+      <button class="entrada-btn" (click)="navigateToEntrada(3)">Entrada 3</button>
+      <button class="entrada-btn" (click)="navigateToEntrada(4)">Entrada 4</button>
+      <button class="entrada-btn" (click)="navigateToEntrada(5)">Entrada 5</button>
     </div>
   </div>
-
-  <!-- Otras fiestas -->
-  <div class="container my-5" id="other-events">
-    <h2 class="bebas-font text-center text-white">Otras Fiestas</h2>
-    <div class="row">
-      <!-- Los eventos se cargarán aquí -->
-    </div>
-  </div>
-
-  <!-- Enlazamos el JS de Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-  <!-- Código JavaScript para cargar el archivo JSON -->
-  <script>
-    fetch('entradas.json')  // Apunta al archivo entradas.json
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Error al cargar el archivo JSON');
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Fiesta principal (la más próxima)
-        const mainEvent = data[0];  // Tomamos la primera fiesta como la principal
-        const mainEventHtml = `
-          <div class="row">
-            <div class="col-md-6 event-image">
-              <img src="${mainEvent.imagen}" alt="${mainEvent.titulo}" class="img-fluid">
-            </div>
-            <div class="col-md-6 event-details">
-              <h1 class="bebas-font text-white">${mainEvent.titulo}</h1>
-              <p class="text-white">Fecha: ${mainEvent.fecha}</p>
-              <div class="countdown">
-                <p>00:00:00</p>
-              </div>
-              <div class="ticket-info">
-                <a href="#" class="btn btn-warning btn-lg">Comprar Entradas</a>
-              </div>
-            </div>
-          </div>
-        `;
-        document.getElementById('main-event').innerHTML = mainEventHtml;
-
-        // Otras fiestas (4 próximas)
-        let otherEventsHtml = '';
-        data.slice(1, 5).forEach(event => {  // Cargamos las 4 fiestas siguientes
-          otherEventsHtml += `
-            <div class="col-md-3">
-              <div class="event-box">
-                <h4 class="bebas-font">${event.titulo}</h4>
-                <p>${event.fecha}</p>
-                <a href="#" class="btn btn-warning btn-sm">Comprar Entradas</a>
-              </div>
-            </div>
-          `;
-        });
-        document.querySelector('#other-events .row').innerHTML = otherEventsHtml;
-      })
-      .catch(error => {
-        console.error('Error cargando el archivo JSON:', error);
-        document.getElementById('main-event').innerHTML = '<p>Error al cargar los eventos.</p>';
-      });
-  </script>
-
-</body>
-</html>
+  
