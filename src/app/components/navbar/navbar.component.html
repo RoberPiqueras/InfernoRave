@@ -1,7 +1,7 @@
-<header class="navbar navbar-expand-lg fixed-top" [class.scrolled]="isScrolled" [class.mobile-open]="mobileMenuOpen">
+<header class="navbar navbar-expand-lg fixed-top rounded-navbar" [class.scrolled]="isScrolled" [class.mobile-open]="mobileMenuOpen">
   <div class="container-fluid px-4 py-2">
-    <!-- Logo como imagen -->
-    <a routerLink="/" class="navbar-brand d-flex align-items-center me-5" aria-label="Inferno Rave Home">
+    <!-- Logo en la parte izquierda -->
+    <a routerLink="/" class="navbar-brand d-flex align-items-center" aria-label="Inferno Rave Home">
       <img src="assets/Logo.png" alt="Inferno Rave Logo" class="logo-img">
     </a>
 
@@ -10,10 +10,10 @@
       <mat-icon>{{mobileMenuOpen ? 'close' : 'menu'}}</mat-icon>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <div class="vr d-none d-lg-flex mx-4 bg-secondary opacity-50"></div>
-      <nav class="navbar-nav me-auto my-2 my-lg-0">
-        <div class="d-flex flex-column flex-lg-row gap-3">
+    <!-- Menú central con los enlaces -->
+    <div class="collapse navbar-collapse mx-auto" id="navbarContent">
+      <nav class="navbar-nav d-flex justify-content-center w-100">
+        <div class="d-flex flex-row gap-3">
           <!-- Enlace a Home -->
           <a routerLink="/home" routerLinkActive="active" class="nav-link d-flex align-items-center px-3" matTooltip="Home" matTooltipPosition="below">
             <mat-icon class="me-2">home</mat-icon>
@@ -36,15 +36,21 @@
           </a>
         </div>
       </nav>
-      <div class="vr d-none d-lg-flex mx-4 bg-secondary opacity-50"></div>
+    </div>
+
+    <!-- Sección derecha con Login y Registro -->
+    <div class="d-flex align-items-center ms-4">
+      <a routerLink="/login" routerLinkActive="active" class="btn btn-outline-primary me-3">Login</a>
+      <a routerLink="/registrarse" routerLinkActive="active" class="btn btn-primary">Registrarse</a>
     </div>
   </div>
 </header>
+
+<!-- Menú móvil -->
 <div class="mobile-menu-backdrop" [class.show]="mobileMenuOpen" (click)="toggleMobileMenu()"></div>
 <div class="mobile-menu" [class.show]="mobileMenuOpen">
   <div class="mobile-menu-content">
     <nav class="mobile-nav d-flex flex-column gap-3 p-4">
-      <!-- Enlaces del menú móvil -->
       <a routerLink="/home" (click)="toggleMobileMenu()" routerLinkActive="active" class="mobile-nav-link d-flex align-items-center p-3 rounded">
         <mat-icon class="me-3">home</mat-icon>
         <span>Home</span>
@@ -60,6 +66,14 @@
       <a routerLink="/contacto" (click)="toggleMobileMenu()" routerLinkActive="active" class="mobile-nav-link d-flex align-items-center p-3 rounded">
         <mat-icon class="me-3">mail</mat-icon>
         <span>Contacto</span>
+      </a>
+      <a routerLink="/login" (click)="toggleMobileMenu()" routerLinkActive="active" class="mobile-nav-link d-flex align-items-center p-3 rounded">
+        <mat-icon class="me-3">login</mat-icon>
+        <span>Login</span>
+      </a>
+      <a routerLink="/registrarse" (click)="toggleMobileMenu()" routerLinkActive="active" class="mobile-nav-link d-flex align-items-center p-3 rounded">
+        <mat-icon class="me-3">how_to_reg</mat-icon>
+        <span>Registrarse</span>
       </a>
     </nav>
   </div>

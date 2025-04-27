@@ -1,26 +1,31 @@
 /* General navbar styles */
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 20px; /* Distancia desde el borde superior */
+  left: 50%;
+  transform: translateX(-50%); /* Centra el navbar horizontalmente */
+  width: 90%; /* Ancho ajustado al 90% del viewport */
   height: 70px; /* Altura fija del navbar */
-  background: rgba(10, 10, 10, 0.9); /* Fondo oscuro */
+  background: rgba(10, 10, 10, 0.8); /* Fondo oscuro y translúcido */
   z-index: 1000; /* Asegúrate de que esté por encima del contenido */
   display: flex;
   align-items: center;
   padding: 0 20px; /* Espaciado lateral */
+  border-radius: 25px; /* Bordes más redondeados */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2); /* Sombra más suave para el efecto flotante */
+  transition: all 0.3s ease; /* Transición suave */
 }
 
 .navbar.scrolled {
   background: rgba(20, 20, 20, 0.95); /* Fondo más sólido al hacer scroll */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3); /* Sombra más prominente al hacer scroll */
   padding: 0.25rem 0;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
+  margin-right: 20px; /* Espacio entre el logo y el menú */
 }
 
 .logo-img {
@@ -29,41 +34,31 @@
   max-width: 150px; /* Ancho máximo */
 }
 
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Toma todo el espacio disponible */
+  flex: 1;
+}
+
 .nav-link {
   color: white !important;
   font-weight: 500;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  border-radius: 4px;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.1) !important;
-    color: #ff5722 !important;
-  }
-
-  &.active {
-    color: #ff5722 !important;
-    background: rgba(255, 87, 34, 0.1) !important;
-    border-bottom: 2px solid #ff5722;
-  }
+  border-radius: 10px; /* Bordes redondeados para los enlaces */
+  padding: 0.75rem 1rem; /* Añadí un poco más de padding para hacerlo más espacioso */
 }
 
-.mobile-menu-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1040;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ff5722 !important;
+}
 
-  &.show {
-    opacity: 1;
-    visibility: visible;
-  }
+.nav-link.active {
+  color: #ff5722 !important;
+  background: rgba(255, 87, 34, 0.1) !important;
+  border-bottom: 2px solid #ff5722;
 }
 
 /* Botones de Iniciar Sesión y Registrarse */
@@ -72,6 +67,7 @@
   letter-spacing: 1px;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease;
+  border-radius: 10px; /* Bordes redondeados en los botones */
 }
 
 .btn-outline-primary {
@@ -94,11 +90,25 @@
 }
 
 /* Ajustes para el menú móvil */
-.mobile-menu .btn {
+.mobile-menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  margin-bottom: 0.5rem;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
+/* Estilos responsivos y el menú móvil */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -127,11 +137,61 @@
     background: rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
     padding: 0.75rem 1rem;
-    border-radius: 4px;
+    border-radius: 10px;
 
     &:hover, &.active {
       background: rgba(255, 87, 34, 0.1) !important;
       color: #ff5722 !important;
     }
+  }
+}
+
+/* Estilos para los botones de Login y Registro */
+.navbar .d-flex.ms-4 {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .btn-outline-primary,
+.navbar .btn-primary {
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  border-radius: 10px; /* Bordes redondeados en los botones */
+}
+
+.btn-outline-primary {
+  color: #ff5722;
+  border: 1px solid #ff5722;
+
+  &:hover {
+    background: #ff5722;
+    color: white;
+  }
+}
+
+.btn-primary {
+  background: #ff5722;
+  color: white;
+
+  &:hover {
+    background: #e64a19;
+  }
+}
+
+/* Ajustes para la vista móvil */
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: block;
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 12px 0;
+  }
+
+  .mobile-menu {
+    display: block;
   }
 }
