@@ -22,21 +22,32 @@
   padding: 0.25rem 0;
 }
 
+/* Logo a la izquierda */
 .navbar-brand {
   display: flex;
   align-items: center;
-  margin-right: 20px; /* Espacio entre el logo y el menú */
+  position: absolute;
+  left: 20px; /* Alineado a la izquierda */
+  transform: translateX(0);
 }
 
 .logo-img {
-  height: 50px; /* Altura del logo */
+  height: 80px; /* Aumento del tamaño del logo */
   width: auto; /* Mantener proporción */
-  max-width: 150px; /* Ancho máximo */
+  max-width: 180px; /* Aumento máximo del ancho */
+  transition: transform 0.3s ease, filter 0.3s ease; /* Agregar transiciones para efectos interactivos */
 }
 
+/* Efecto "locos" - Resaltado con un borde brillante */
+.navbar-brand:hover .logo-img {
+  transform: rotate(360deg) scale(1.1); /* Giro y aumento de tamaño en hover */
+  filter: drop-shadow(0 0 8px #ff5722) drop-shadow(0 0 12px #ff5722); /* Sombra brillante y efecto de resplandor */
+}
+
+/* Menú central (links) */
 .navbar-nav {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centra los enlaces del menú */
   width: 100%; /* Toma todo el espacio disponible */
   flex: 1;
 }
@@ -61,8 +72,15 @@
   border-bottom: 2px solid #ff5722;
 }
 
-/* Botones de Iniciar Sesión y Registrarse */
-.btn {
+/* Botones de Iniciar Sesión y Registrarse a la derecha */
+.navbar .d-flex.ms-4 {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Esto empuja los botones hacia la derecha */
+}
+
+.navbar .btn-outline-primary,
+.navbar .btn-primary {
   font-weight: 600;
   letter-spacing: 1px;
   padding: 0.5rem 1rem;
@@ -70,6 +88,12 @@
   border-radius: 10px; /* Bordes redondeados en los botones */
 }
 
+/* Agregamos margen a los botones para separar los elementos */
+.navbar .nav-link.contacto {
+  margin-right: 40px; /* Separación para empujar los botones */
+}
+
+/* Estilos para los botones de Login y Registro */
 .btn-outline-primary {
   color: #ff5722;
   border: 1px solid #ff5722;
@@ -144,6 +168,22 @@
       color: #ff5722 !important;
     }
   }
+
+  .mobile-nav-link.login,
+  .mobile-nav-link.registro {
+    display: block; /* Los botones de Login y Registro deben ser visibles dentro del menú móvil */
+  }
+}
+
+/* Ajuste para el botón hamburguesa a la derecha */
+.navbar-toggler {
+  position: absolute;
+  right: 20px; /* Coloca el botón hamburguesa a la derecha */
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  z-index: 1100; /* Asegúrate de que esté sobre otros elementos */
 }
 
 /* Estilos para los botones de Login y Registro */
@@ -191,7 +231,20 @@
     padding: 12px 0;
   }
 
+  /* Ocultar botones de Login y Registro en el navbar móvil */
+  .navbar .btn-outline-primary,
+  .navbar .btn-primary {
+    display: none;
+  }
+
+  /* Mostrar menú móvil */
   .mobile-menu {
+    display: block;
+  }
+
+  /* Mostrar botones de Login y Registro en el menú móvil */
+  .mobile-menu .mobile-nav-link.login,
+  .mobile-menu .mobile-nav-link.registro {
     display: block;
   }
 }

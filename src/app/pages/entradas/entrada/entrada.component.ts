@@ -29,7 +29,7 @@ export class EntradaComponent implements OnInit {
   loadEntradaData(): void {
     // Puedes sustituir esta lógica con un servicio para obtener datos de un API o similar
     const entradas = [
-      { id: 1, title: 'Entrada 1', description: 'Descripción detallada de la Entrada 1' },
+      { id: 1, title: 'Entrada 1', description: 'Bomboi detallada de la Entrada 1' },
       { id: 2, title: 'Entrada 2', description: 'Descripción detallada de la Entrada 2' },
       { id: 3, title: 'Entrada 3', description: 'Descripción detallada de la Entrada 3' },
       { id: 4, title: 'Entrada 4', description: 'Descripción detallada de la Entrada 4' },
