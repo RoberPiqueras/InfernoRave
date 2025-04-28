@@ -1,32 +1,368 @@
-/* entradas.component.css */
-.entradas-container {
-  text-align: center;
-  padding: 20px;
+:root {
+  --inferno-orange: #ff4500;
+  --inferno-dark: #000000; /* Cambiado a negro puro */
+  --inferno-darker: #000000; /* También negro puro */
+  --inferno-light: #ccc;
 }
 
-.entradas-list {
+body {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #000000;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+.entradas-section {
+  padding: 2rem 0 4rem;
+  background-color: var(--inferno-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.entradas-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 69, 0, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: 0;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--inferno-orange);
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.subtitle {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--inferno-orange);
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+/* Evento destacado */
+.proximo-evento {
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  border: 2px solid var(--inferno-orange);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(255, 69, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.proximo-evento::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/api/placeholder/1000/400') center/cover no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+  animation: pulse 15s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1.05);
+  }
+}
+
+.evento-title {
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--inferno-orange);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 0 15px rgba(255, 69, 0, 0.7);
+}
+
+.evento-fecha {
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  background-color: rgba(255, 69, 0, 0.8);
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+  animation: glowing 3s infinite alternate;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 69, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+  }
+}
+
+.evento-info {
   display: flex;
-  justify-content: space-around;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 1;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.entrada-btn {
-  background-color: #ff5722;
+.evento-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border-left: 3px solid var(--inferno-orange);
+}
+
+.evento-info-icon {
+  color: var(--inferno-orange);
+  font-size: 1.2rem;
+}
+
+/* Entradas Grid */
+.entradas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.entrada-card {
+  background: linear-gradient(145deg, #0a0a0a, #000000);
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 1.5rem;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.entrada-card:hover {
+  transform: perspective(1000px) rotateX(5deg) scale(1.03);
+  box-shadow: 0 15px 30px rgba(255, 69, 0, 0.3);
+  border-color: var(--inferno-orange);
+}
+
+.entrada-card::before {
+  content: "";
+  position: absolute;
+  top: -75%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 69, 0, 0.1), transparent 70%);
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: opacity 0.6s, transform 1.5s;
+  z-index: 0;
+}
+
+.entrada-card:hover::before {
+  opacity: 1;
+  transform: rotate(45deg);
+}
+
+.entrada-content {
+  position: relative;
+  z-index: 1;
+}
+
+.entrada-title {
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+.entrada-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background-color: var(--inferno-orange);
+  transition: width 0.3s ease;
+}
+
+.entrada-card:hover .entrada-title::after {
+  width: 100%;
+}
+
+.entrada-precio {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--inferno-orange);
+  margin-bottom: 1rem;
+  font-family: 'Bebas Neue', sans-serif;
+  text-shadow: 0 0 10px rgba(255, 69, 0, 0.3);
+}
+
+.entrada-descripcion {
+  color: var(--inferno-light);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.btn-infernorave {
+  background-color: var(--inferno-orange);
   color: white;
   border: none;
-  padding: 15px 30px;
-  margin: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.entrada-btn:hover {
-  background-color: #e64a19;
+.btn-infernorave:hover {
+  background-color: #ff5722;
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 69, 0, 0.4);
+  color: white;
 }
 
-body{
-  padding-top: 70px;
-  padding-bottom: 70px;
+.btn-infernorave::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.btn-infernorave:hover::before {
+  left: 100%;
+  animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+    opacity: 0.7;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.entrada-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(145deg, #111, #000);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  border: 2px solid rgba(255, 69, 0, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.entrada-card:hover .entrada-icon-wrapper {
+  transform: rotate(360deg);
+  border-color: var(--inferno-orange);
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
+}
+
+.entrada-icon {
+  font-size: 1.8rem;
+  color: var(--inferno-orange);
+}
+
+/* Nueva tarjeta de evento "pulsante" */
+.glitch-text {
+  text-shadow: 
+    2px 0 0 rgba(255, 0, 0, 0.5),
+    -2px 0 0 rgba(0, 255, 255, 0.5);
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    text-shadow: 2px 0 0 rgba(255, 0, 0, 0.5), -2px 0 0 rgba(0, 255, 255, 0.5);
+  }
+  25% {
+    text-shadow: -2px 0 0 rgba(255, 0, 0, 0.5), 2px 0 0 rgba(0, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 2px 0 0 rgba(0, 255, 255, 0.5), -2px 0 0 rgba(255, 0, 0, 0.5);
+  }
+  75% {
+    text-shadow: -2px 0 0 rgba(0, 255, 255, 0.5), 2px 0 0 rgba(255, 0, 0, 0.5);
+  }
+}
+
+@media (max-width: 768px) {
+  .entrada-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .evento-info {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: flex-start;
+  }
+  
+  .proximo-evento {
+    text-align: center;
+  }
+  
+  .entradas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }

@@ -1,172 +1,148 @@
-<body class="bg-dark text-white">
-  <div class="container-fluid py-5">
-    <!-- Div para el próximo evento -->
-    <div class="row justify-content-center mb-5">
-      <div class="col-12">
-        <div class="card rounded-5 shadow-lg border-0" style="background-color: black;">
-          <div class="row g-0">
-            <!-- GIF grande para el próximo evento (solo en la primera entrada) -->
-            <div class="col-md-6 d-flex justify-content-center align-items-center">
-              <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3Nqd3dnYTFuY25lM3NnbGsxbXZtMWtxbWZ1Yjhremlsd3IwNWJidSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/awg2uBZCVKWJi/giphy.gifb" class="img-fluid rounded-start" alt="Próximo Evento" style="max-height: 600px; object-fit: contain;">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INFERNORAVE - Entradas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <!-- Sección de Entradas -->
+  <section class="entradas-section">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">ENTRADAS INFERNORAVE</h2>
+      
+      <!-- Próximo Evento - Ahora arriba -->
+      <div class="proximo-evento animate__animated animate__fadeIn">
+        <div class="text-center">
+          <div class="evento-fecha mb-3 animate__animated animate__pulse animate__infinite">18 MAYO 2025</div>
+          <h3 class="evento-title glitch-text">INFERNORAVE: APOCALYPSE</h3>
+          
+          <div class="evento-info mb-4">
+            <div class="evento-info-item">
+              <span class="evento-info-icon">📍</span>
+              <span>SALA NUCLEAR, MADRID</span>
             </div>
-
-            <!-- Información del Próximo Evento -->
-            <div class="col-md-6 d-flex flex-column justify-content-center">
-              <div class="card-body p-3">
-                <!-- Título del Evento -->
-                <h3 class="card-title text-center" style="font-family: 'Bebas Neue', sans-serif; color: #FF4500; font-size: 2rem;">Próximo Evento</h3>
-
-                <!-- Contador (fake) -->
-                <div class="text-center mb-3">
-                  <h4 class="text-white">Contador: 00:00:00</h4>
-                </div>
-
-                <!-- Descripción breve del Evento -->
-                <p class="card-text text-center fs-5 mb-4">¡No te pierdas la fiesta más grande de la temporada! Prepárate para una experiencia única llena de música, luces y mucha diversión.</p>
-
-                <!-- Botón de Compra -->
-                <div class="text-center">
-                  <button class="btn entrada-btn py-2" (click)="navigateToEntrada(1)">Comprar Entrada</button>
-                </div>
+            <div class="evento-info-item">
+              <span class="evento-info-icon">🕙</span>
+              <span>23:00 - 07:00</span>
+            </div>
+            <div class="evento-info-item">
+              <span class="evento-info-icon">🎧</span>
+              <span>200 BPM</span>
+            </div>
+          </div>
+          
+          <p class="mb-4" style="max-width: 700px; margin: 0 auto;">8 horas ininterrumpidas de technohardcore, gabber y industrial con los DJs más explosivos del circuito internacional. Una noche que hará historia en la escena hardcore española.</p>
+          
+        </div>
+      </div>
+      
+      <!-- Tipos de Entradas - Ahora en formato grid con animaciones -->
+      <h3 class="subtitle text-center mt-5 mb-4">TIPOS DE ENTRADAS</h3>
+      <div class="entradas-grid">
+        <!-- Entrada Tipo 1 -->
+        <div class="entrada-card animate__animated animate__fadeInUp animate__delay-1s">
+          <div class="entrada-content">
+            <div class="text-center">
+              <div class="entrada-icon-wrapper">
+                <i class="entrada-icon">🔥</i>
               </div>
+              <h3 class="entrada-title">BÁSICA</h3>
+              <p class="entrada-precio">25€</p>
+              <p class="entrada-descripcion">Acceso básico al evento INFERNORAVE. Disfruta de la mejor música hardcore y technohardcore con nuestra entrada estándar.</p>
+              <button class="btn btn-infernorave" (click)="navigateToEntrada(1)">COMPRAR AHORA</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Entrada Tipo 2 -->
+        <div class="entrada-card animate__animated animate__fadeInUp animate__delay-2s">
+          <div class="entrada-content">
+            <div class="text-center">
+              <div class="entrada-icon-wrapper">
+                <i class="entrada-icon">⚡</i>
+              </div>
+              <h3 class="entrada-title">PREMIUM</h3>
+              <p class="entrada-precio">40€</p>
+              <p class="entrada-descripcion">Acceso premium con consumición incluida y zona preferente. Vive la experiencia INFERNORAVE con comodidades adicionales.</p>
+              <button class="btn btn-infernorave" (click)="navigateToEntrada(2)">COMPRAR AHORA</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Entrada Tipo 3 -->
+        <div class="entrada-card animate__animated animate__fadeInUp animate__delay-3s">
+          <div class="entrada-content">
+            <div class="text-center">
+              <div class="entrada-icon-wrapper">
+                <i class="entrada-icon">👑</i>
+              </div>
+              <h3 class="entrada-title">VIP</h3>
+              <p class="entrada-precio">75€</p>
+              <p class="entrada-descripcion">La experiencia completa con acceso VIP, zona reservada, 2 consumiciones y meet & greet con los DJs. Exclusividad total.</p>
+              <button class="btn btn-infernorave" (click)="navigateToEntrada(3)">COMPRAR AHORA</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Entrada Tipo 4 -->
+        <div class="entrada-card animate__animated animate__fadeInUp animate__delay-4s">
+          <div class="entrada-content">
+            <div class="text-center">
+              <div class="entrada-icon-wrapper">
+                <i class="entrada-icon">🎭</i>
+              </div>
+              <h3 class="entrada-title">GRUPO</h3>
+              <p class="entrada-precio">120€</p>
+              <p class="entrada-descripcion">Entrada para 4 personas con acceso a zona especial de grupo. Perfecto para venir con amigos y disfrutar juntos de la mejor música hardcore.</p>
+              <button class="btn btn-infernorave" (click)="navigateToEntrada(4)">COMPRAR AHORA</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Entrada Tipo 5 -->
+        <div class="entrada-card animate__animated animate__fadeInUp animate__delay-5s">
+          <div class="entrada-content">
+            <div class="text-center">
+              <div class="entrada-icon-wrapper">
+                <i class="entrada-icon">💀</i>
+              </div>
+              <h3 class="entrada-title">ABONO</h3>
+              <p class="entrada-precio">150€</p>
+              <p class="entrada-descripcion">Acceso a los 3 días de festival con todos los beneficios premium. La forma definitiva de experimentar INFERNORAVE en su totalidad.</p>
+              <button class="btn btn-infernorave" (click)="navigateToEntrada(5)">COMPRAR AHORA</button>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Div para las siguientes dos entradas (sin GIFs) -->
-    <div class="row justify-content-center mb-5">
-      <div class="col-12">
-        <div class="card rounded-5 shadow-lg border-0" style="background-color: black;">
-          <div class="row g-0">
-            <!-- Entrada 1: Acceso Básico -->
-            <div class="col-md-6">
-              <div class="card-body p-3">
-                <h5 class="card-title text-center" style="font-family: 'Bebas Neue', sans-serif; color: #FF4500; font-size: 1.5rem;">Acceso Básico</h5>
-                <p class="card-text text-center fs-5">Acceso a todas las áreas principales del evento. Vive la fiesta con toda la energía.</p>
-                <div class="text-center">
-                  <button class="btn entrada-btn w-100 py-2" (click)="navigateToEntrada(2)">Comprar Entrada</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Entrada 2: VIP Exclusivo -->
-            <div class="col-md-6">
-              <div class="card-body p-3">
-                <h5 class="card-title text-center" style="font-family: 'Bebas Neue', sans-serif; color: #FF4500; font-size: 1.5rem;">VIP Exclusivo</h5>
-                <p class="card-text text-center fs-5">Acceso VIP, zonas exclusivas y barra libre. Para los más exigentes.</p>
-                <div class="text-center">
-                  <button class="btn entrada-btn w-100 py-2" (click)="navigateToEntrada(3)">Comprar Entrada</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Div para las siguientes dos entradas (sin GIFs) -->
-    <div class="row justify-content-center mb-5">
-      <div class="col-12">
-        <div class="card rounded-5 shadow-lg border-0" style="background-color: black;">
-          <div class="row g-0">
-            <!-- Entrada 3: Backstage Pass -->
-            <div class="col-md-6">
-              <div class="card-body p-3">
-                <h5 class="card-title text-center" style="font-family: 'Bebas Neue', sans-serif; color: #FF4500; font-size: 1.5rem;">Backstage Pass</h5>
-                <p class="card-text text-center fs-5">Acceso exclusivo al backstage y meet & greet con los DJs. Vive la experiencia de cerca.</p>
-                <div class="text-center">
-                  <button class="btn entrada-btn w-100 py-2" (click)="navigateToEntrada(4)">Comprar Entrada</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Entrada 4: Entrada Grupal -->
-            <div class="col-md-6">
-              <div class="card-body p-3">
-                <h5 class="card-title text-center" style="font-family: 'Bebas Neue', sans-serif; color: #FF4500; font-size: 1.5rem;">Entrada Grupal</h5>
-                <p class="card-text text-center fs-5">Pack para 5 personas con un descuento especial. ¡Disfruta del evento con tus amigos!</p>
-                <div class="text-center">
-                  <button class="btn entrada-btn w-100 py-2" (click)="navigateToEntrada(5)">Comprar Entrada</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <style>
-    body {
-      background: linear-gradient(135deg, #0d0d0d, #1c1c1c);
-      min-height: 100vh;
-    }
-
-    .entrada-btn {
-      background-color: #1a1a1a;
-      border: 2px solid #FF4500;
-      color: white;
-      font-weight: bold;
-      transition: all 0.4s ease;
-      border-radius: 10px;
-      padding: 10px;
-    }
-
-    .entrada-btn:hover {
-      background: linear-gradient(90deg, #FF4500, #FF00FF);
-      color: black;
-      border: none;
-    }
-
-    .card {
-      transition: transform 0.3s ease-in-out;
-      height: 100%;
-      padding: 10px;
-    }
-
-    .card:hover {
-      transform: scale(1.02);
-    }
-
-    .card-body {
-      padding: 1rem;
-    }
-
-    .card-title {
-      font-size: 1.5rem;
-      color: #FF4500;
-    }
-
-    .card-text {
-      font-size: 0.9rem;
-    }
-
-    .img-fluid {
-      border-radius: 10px;
-      max-width: 100%;
-      object-fit: cover;
-    }
-
-    /* Para que el gif esté centrado en la primera entrada */
-    .img-fluid {
-      max-width: 100%;
-      max-height: 600px;
-      object-fit: contain;
-    }
-
-    .gif-max-size {
-      max-width: 100%;
-      max-height: 150px;
-      object-fit: contain;
-    }
-
-    /* Centrar el texto de la derecha */
-    .card-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* Esto centra el texto verticalmente */
-    }
-  </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Efecto 3D para las tarjetas de entrada
+    document.querySelectorAll('.entrada-card').forEach(card => {
+      card.addEventListener('mousemove', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left; 
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const angleX = (y - centerY) / 20;
+        const angleY = (centerX - x) / 20;
+        
+        this.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.03)`;
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+      });
+    });
+  </script>
 </body>
+</html>
