@@ -33,7 +33,7 @@ export const routes: Routes = [
     title: 'Inferno Rave - Entradas'
   },
   { 
-    path: 'entrada/:id', // Ruta dinámica para cargar cada entrada específica
+    path: 'entrada/:id', 
     component: EntradaComponent,
     title: 'Inferno Rave - Entrada'
   },
