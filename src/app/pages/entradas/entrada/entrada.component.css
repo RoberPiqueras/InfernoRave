@@ -1,4 +1,64 @@
-body{
-    padding-top: 70px;
-    padding-bottom: 70px;
+body {
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(135deg, #1c1c1c, #333333);
+  min-height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.text-orange {
+  color: #FF4500;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.btn-warning {
+  background-color: #FF4500;
+  border-color: #FF4500;
+}
+
+.btn-warning:hover {
+  background-color: #FF6347;
+  border-color: #FF6347;
+}
+
+.card {
+  background-color: #2c2c2c;
+  color: #fff;
+  border: none;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  color: #FF4500;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.display-4 {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #FF4500;
+  text-transform: uppercase;
+}
+
+.form-control {
+  border-radius: 10px;
+}
+
+.embed-responsive-16by9 iframe {
+  border-radius: 10px;
+}
+
+.btn-lg {
+  border-radius: 30px;
 }

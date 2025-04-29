@@ -1,0 +1,62 @@
+
+body {
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(135deg, #1c1c1c, #333333);
+  min-height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.text-orange {
+  color: #FF4500;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.btn-warning {
+  background-color: #FF4500;
+  border-color: #FF4500;
+}
+
+.btn-warning:hover {
+  background-color: #FF6347;
+  border-color: #FF6347;
+}
+
+.card {
+  background-color: #2c2c2c;
+  color: #fff;
+  border: none;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-title {
+  color: #FF4500;
+}
+
+.form-control {
+  border-radius: 10px;
+}
+
+.form-group label {
+  color: #FF4500;
+}
+
+.form-check-label {
+  color: #fff;
+}
+
+.btn-lg {
+  border-radius: 30px;
+}
+
+.text-center h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FF4500;
+}

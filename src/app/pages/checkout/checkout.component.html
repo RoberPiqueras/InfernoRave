@@ -1,1 +1,91 @@
-<p>checkout works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout | INFERNO RAVE</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Google Fonts - Bebas Neue -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-white">
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <!-- Columna del formulario de Checkout -->
+      <div class="col-md-8 col-lg-6">
+
+        <!-- Título -->
+        <div class="text-center mb-5">
+          <h2>Finaliza tu Compra</h2>
+          <p class="fs-4">¡Solo un paso más para vivir la experiencia INFERNO RAVE!</p>
+        </div>
+
+        <!-- Formulario de Checkout -->
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title mb-4">Detalles de la Compra</h3>
+            <form>
+              <!-- Nombre -->
+              <div class="mb-4">
+                <label for="nombre" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control form-control-lg" id="nombre" required>
+              </div>
+
+              <!-- Correo Electrónico -->
+              <div class="mb-4">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control form-control-lg" id="email" required>
+              </div>
+
+              <!-- Dirección -->
+              <div class="mb-4">
+                <label for="direccion" class="form-label">Dirección de Envío</label>
+                <input type="text" class="form-control form-control-lg" id="direccion" required>
+              </div>
+
+              <!-- Método de Pago -->
+              <div class="mb-4">
+                <label class="form-label">Método de Pago</label>
+                <select class="form-control form-control-lg" id="metodoPago" required>
+                  <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="transferencia">Transferencia Bancaria</option>
+                </select>
+              </div>
+
+              <!-- Aceptación de Términos -->
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="terminos" required>
+                <label class="form-check-label" for="terminos">
+                  Acepto los <a href="#" class="text-warning text-decoration-none">términos y condiciones</a>.
+                </label>
+              </div>
+
+              <!-- Botón de Confirmación -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-warning btn-lg w-100">Confirmar Compra</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Información adicional -->
+        <div class="mt-4 text-center">
+          <button class="btn btn-lg btn-outline-light rounded-pill shadow-sm px-4 py-2" (click)="goBack()">
+            <i class="bi bi-arrow-left"></i> Volver a Entradas
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -6,6 +6,9 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { EntradasComponent } from './pages/entradas/entradas.component';
 import { EntradaComponent } from './pages/entradas/entrada/entrada.component'; // Componente para mostrar una entrada específica
 import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegistroComponent } from './pages/registro/registro.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
   { 
@@ -45,7 +48,18 @@ export const routes: Routes = [
     title: 'Inferno Rave - Contacto' 
   },
   { 
-    path: '**', 
-    redirectTo: '' 
+    path: 'login', 
+    component: LoginComponent, 
+    title: 'Inferno Rave - Login' 
+  },
+  { 
+    path: 'registro', 
+    component: RegistroComponent, 
+    title: 'Inferno Rave - registro' 
+  },
+  { 
+    path: '**',
+    component: NotFoundComponent,
+    title: 'Inferno Rave - 404 Not Found'
   }
 ];

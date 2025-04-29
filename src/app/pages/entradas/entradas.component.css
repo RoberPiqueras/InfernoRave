@@ -12,6 +12,8 @@ body {
   color: white;
   font-family: 'Arial', sans-serif;
   overflow-x: hidden;
+  background: linear-gradient(135deg, #1a1a1a, #4b0000); /* Fondo oscuro con un toque de rojo */
+
 }
 
 .entradas-section {

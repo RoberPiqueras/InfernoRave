@@ -29,11 +29,11 @@ export class EntradaComponent implements OnInit {
   loadEntradaData(): void {
     // Puedes sustituir esta lógica con un servicio para obtener datos de un API o similar
     const entradas = [
-      { id: 1, title: 'Entrada 1', description: 'Bomboi detallada de la Entrada 1' },
-      { id: 2, title: 'Entrada 2', description: 'Descripción detallada de la Entrada 2' },
-      { id: 3, title: 'Entrada 3', description: 'Descripción detallada de la Entrada 3' },
-      { id: 4, title: 'Entrada 4', description: 'Descripción detallada de la Entrada 4' },
-      { id: 5, title: 'Entrada 5', description: 'Descripción detallada de la Entrada 5' },
+      { id: 1, title: 'Entrada básica', description: 'Acceso básico al evento INFERNORAVE. Disfruta de la mejor música hardcore y technohardcore con nuestra entrada estándar.' },
+      { id: 2, title: 'Entrada premium', description: 'Acceso premium con consumición incluida y zona preferente. Vive la experiencia INFERNORAVE con comodidades adicionales.' },
+      { id: 3, title: 'Entrada vip', description: 'La experiencia completa con acceso VIP, zona reservada, 2 consumiciones y meet & greet con los DJs. Exclusividad total.' },
+      { id: 4, title: 'Entrada grupal', description: 'Entrada para 4 personas con acceso a zona especial de grupo. Perfecto para venir con amigos y disfrutar juntos de la mejor música hardcore.' },
+      { id: 5, title: 'Abono', description: 'Acceso a los 3 días de festival con todos los beneficios premium. La forma definitiva de experimentar INFERNORAVE en su totalidad.' },
     ];
 
     // Buscamos la entrada correspondiente por ID
@@ -43,5 +43,9 @@ export class EntradaComponent implements OnInit {
   // Función para redirigir al usuario de vuelta a la lista de entradas
   goBack() {
     this.router.navigate(['/entradas']);  // Redirige a la página de entradas
+  }
+
+  checkout() {
+    this.router.navigate(['/checkout']);  
   }
 }

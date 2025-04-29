@@ -1,5 +1,51 @@
 
 body {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  background: linear-gradient(135deg, #1a1a1a, #4b0000); /* Fondo oscuro con un toque de rojo */
+  padding-top: 80px;
+  padding-bottom: 80px;
+  font-family: 'Bebas Neue', sans-serif;
+}
+h1, h2, label {
+  background: linear-gradient(90deg, #ff4500, #ff8c00); /* Naranja y rojo */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+button.btn-warning {
+  background: linear-gradient(90deg, #ff4500, #ff8c00);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button.btn-warning:hover {
+  background: #ff8c00;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.form-control {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.form-control:focus {
+  border-color: #ff4500;
+  box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+}
+
+.text-warning {
+  color: #ff4500 !important;
+}
+
+a.text-warning {
+  text-decoration: none;
+}
+
+.ratio {
+  background: #333;
 }

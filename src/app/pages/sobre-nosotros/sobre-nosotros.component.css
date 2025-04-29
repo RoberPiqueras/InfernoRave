@@ -1,4 +1,66 @@
+
 body {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  background: linear-gradient(135deg, #1a1a1a, #4b0000);
+  color: #ccc;
+  font-family: 'Bebas Neue', sans-serif;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+h1, h2, h3, h4, h5, label {
+  background: linear-gradient(90deg, #ff4500, #ff4500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1 { font-size: 5rem; }
+h2 { font-size: 4rem; }
+h3 { font-size: 3rem; }
+h4 { font-size: 2.5rem; }
+h5 { font-size: 2rem; }
+
+section {
+  padding: 10rem 0; /* Espacio entre secciones */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card {
+  background: linear-gradient(135deg, #1a1a1a, #2c0033); /* Fondo oscuro con rojo */
+  color: #ccc;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(255, 69, 0, 0.6);
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 250px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+a.btn-warning {
+  background: linear-gradient(90deg, #ff4500, #ff4500);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+a.btn-warning:hover {
+  background: #ff4500;
+  color: #fff;
+  transform: scale(1.05);
 }
