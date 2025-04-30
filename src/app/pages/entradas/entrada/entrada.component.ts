@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { EntradasService } from '../../../entradas.service';
+import { Entrada } from '../../../common/DescripcionEntradas';
+import { DataService } from '../../../services/data.service'; // <-- Importación correcta del servicio
 
 @Component({
   selector: 'app-entrada',
@@ -12,12 +13,12 @@ import { EntradasService } from '../../../entradas.service';
 })
 export class EntradaComponent implements OnInit {
   entradaId: number = 0;
-  entradaData: any = null;
+  entradaData: Entrada | undefined;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private entradasService: EntradasService
+    private entradasService: DataService // <-- Uso del servicio correcto
   ) {}
 
   ngOnInit(): void {
@@ -29,16 +30,16 @@ export class EntradaComponent implements OnInit {
   }
 
   loadEntradaData(): void {
-    this.entradasService.getEntradas().subscribe(entradas => {
-      this.entradaData = entradas.find(e => e.id === this.entradaId);
+    this.entradasService.getEntradas().subscribe((data: Entrada[]) => {
+      this.entradaData = data.find((e: Entrada) => e.id === this.entradaId);
     });
   }
 
-  goBack() {
+  goBack(): void {
     this.router.navigate(['/entradas']);
   }
 
-  checkout() {
+  checkout(): void {
     this.router.navigate(['/checkout']);
   }
 }

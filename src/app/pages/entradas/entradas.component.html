@@ -1,110 +1,51 @@
-
 <body>
   <!-- Sección de Entradas -->
   <section class="entradas-section">
     <div class="container">
-      <h2 class="section-title text-center mb-4">ENTRADAS INFERNORAVE</h2>
+      <!-- Verificación de la existencia de los datos del evento -->
+      <h2 class="section-title text-center mb-4" *ngIf="eventoData">{{ eventoData.titulo }}</h2>
       
-      <!-- Próximo Evento - Ahora arriba -->
-      <div class="proximo-evento animate__animated animate__fadeIn">
+      <!-- Información del Evento -->
+      <div class="proximo-evento animate__animated animate__fadeIn" *ngIf="eventoData">
         <div class="text-center">
-          <div class="evento-fecha mb-3 animate__animated animate__pulse animate__infinite">18 MAYO 2025</div>
-          <h3 class="evento-title glitch-text">INFERNORAVE: APOCALYPSE</h3>
+          <div class="evento-fecha mb-3 animate__animated animate__pulse animate__infinite">
+            {{ eventoData.fecha }}
+          </div>
+          <h3 class="evento-title glitch-text">{{ eventoData.titulo }}</h3>
           
           <div class="evento-info mb-4">
             <div class="evento-info-item">
               <span class="evento-info-icon">📍</span>
-              <span>SALA NUCLEAR, MADRID</span>
+              <span>{{ eventoData.ubicacion }}</span>
             </div>
             <div class="evento-info-item">
               <span class="evento-info-icon">🕙</span>
-              <span>23:00 - 07:00</span>
+              <span>{{ eventoData.hora }}</span>
             </div>
             <div class="evento-info-item">
               <span class="evento-info-icon">🎧</span>
-              <span>200 BPM</span>
+              <span>{{ eventoData.bpm }} BPM</span>
             </div>
           </div>
           
-          <p class="mb-4" style="max-width: 700px; margin: 0 auto;">8 horas ininterrumpidas de technohardcore, gabber y industrial con los DJs más explosivos del circuito internacional. Una noche que hará historia en la escena hardcore española.</p>
-          
+          <p class="mb-4" style="max-width: 700px; margin: 0 auto;">{{ eventoData.descripcion }}</p>
         </div>
       </div>
       
-      <!-- Tipos de Entradas - Ahora en formato grid con animaciones -->
+      <!-- Tipos de Entradas -->
       <h3 class="subtitle text-center mt-5 mb-4">TIPOS DE ENTRADAS</h3>
       <div class="entradas-grid">
-        <!-- Entrada Tipo 1 -->
-        <div class="entrada-card animate__animated animate__fadeInUp animate__delay-1s">
+        <!-- Iterar sobre cada tipo de entrada -->
+        <div *ngFor="let entrada of entradasData" class="entrada-card animate__animated animate__fadeInUp">
           <div class="entrada-content">
             <div class="text-center">
               <div class="entrada-icon-wrapper">
-                <i class="entrada-icon">🔥</i>
+                <i class="entrada-icon">🔥</i> <!-- Puedes cambiar este ícono según el tipo de entrada -->
               </div>
-              <h3 class="entrada-title">BÁSICA</h3>
-              <p class="entrada-precio">25€</p>
-              <p class="entrada-descripcion">Acceso básico al evento INFERNORAVE. Disfruta de la mejor música hardcore y technohardcore con nuestra entrada estándar.</p>
-              <button class="btn btn-infernorave" (click)="navigateToEntrada(1)">COMPRAR AHORA</button>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Entrada Tipo 2 -->
-        <div class="entrada-card animate__animated animate__fadeInUp animate__delay-2s">
-          <div class="entrada-content">
-            <div class="text-center">
-              <div class="entrada-icon-wrapper">
-                <i class="entrada-icon">⚡</i>
-              </div>
-              <h3 class="entrada-title">PREMIUM</h3>
-              <p class="entrada-precio">40€</p>
-              <p class="entrada-descripcion">Acceso premium con consumición incluida y zona preferente. Vive la experiencia INFERNORAVE con comodidades adicionales.</p>
-              <button class="btn btn-infernorave" (click)="navigateToEntrada(2)">COMPRAR AHORA</button>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Entrada Tipo 3 -->
-        <div class="entrada-card animate__animated animate__fadeInUp animate__delay-3s">
-          <div class="entrada-content">
-            <div class="text-center">
-              <div class="entrada-icon-wrapper">
-                <i class="entrada-icon">👑</i>
-              </div>
-              <h3 class="entrada-title">VIP</h3>
-              <p class="entrada-precio">75€</p>
-              <p class="entrada-descripcion">La experiencia completa con acceso VIP, zona reservada, 2 consumiciones y meet & greet con los DJs. Exclusividad total.</p>
-              <button class="btn btn-infernorave" (click)="navigateToEntrada(3)">COMPRAR AHORA</button>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Entrada Tipo 4 -->
-        <div class="entrada-card animate__animated animate__fadeInUp animate__delay-4s">
-          <div class="entrada-content">
-            <div class="text-center">
-              <div class="entrada-icon-wrapper">
-                <i class="entrada-icon">🎭</i>
-              </div>
-              <h3 class="entrada-title">GRUPO</h3>
-              <p class="entrada-precio">120€</p>
-              <p class="entrada-descripcion">Entrada para 4 personas con acceso a zona especial de grupo. Perfecto para venir con amigos y disfrutar juntos de la mejor música hardcore.</p>
-              <button class="btn btn-infernorave" (click)="navigateToEntrada(4)">COMPRAR AHORA</button>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Entrada Tipo 5 -->
-        <div class="entrada-card animate__animated animate__fadeInUp animate__delay-5s">
-          <div class="entrada-content">
-            <div class="text-center">
-              <div class="entrada-icon-wrapper">
-                <i class="entrada-icon">💀</i>
-              </div>
-              <h3 class="entrada-title">ABONO</h3>
-              <p class="entrada-precio">150€</p>
-              <p class="entrada-descripcion">Acceso a los 3 días de festival con todos los beneficios premium. La forma definitiva de experimentar INFERNORAVE en su totalidad.</p>
-              <button class="btn btn-infernorave" (click)="navigateToEntrada(5)">COMPRAR AHORA</button>
+              <h3 class="entrada-title">{{ entrada.nombre }}</h3>
+              <p class="entrada-precio">{{ entrada.precio }}€</p>
+              <p class="entrada-descripcion">{{ entrada.descripcion }}</p>
+              <button class="btn btn-infernorave" (click)="navigateToEntrada(entrada.id)">COMPRAR AHORA</button>
             </div>
           </div>
         </div>
@@ -113,26 +54,4 @@
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Efecto 3D para las tarjetas de entrada
-    document.querySelectorAll('.entrada-card').forEach(card => {
-      card.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left; 
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const angleX = (y - centerY) / 20;
-        const angleY = (centerX - x) / 20;
-        
-        this.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.03)`;
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-      });
-    });
-  </script>
 </body>

@@ -1,0 +1,89 @@
+{
+  "evento": {
+    "titulo": "Inferno Rave: APOCALIPSIS",
+    "fecha": "2025-08-10",
+    "ubicacion": "IFEMA, Madrid, España",
+    "hora":"22:00",
+    "bpm": "128-150",
+    "descripcion": "Una noche llena de ritmo, luces y emociones. Disfruta del mejor evento de música electrónica con artistas de talla mundial, sonido envolvente y una atmósfera que te hará vibrar."
+  },
+  "entradas": [
+    {
+      "id": 1,
+      "nombre": "Entrada básica",
+      "descripcion": "Acceso general a la fiesta con todos los servicios básicos.",
+      "precio": "25",
+      "imagen": "https://images.unsplash.com/photo-1666548924551-edd89e2fb152?w=500&auto=format&fit=crop&q=60",
+      "testimonials": [
+        {
+          "author": "Juan Pérez",
+          "text": "¡Fue una experiencia increíble! No puedo esperar para la próxima edición."
+        },
+        {
+          "author": "Laura Sánchez",
+          "text": "La mejor fiesta a la que he asistido. Todo estuvo perfectamente organizado."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Entrada premium",
+      "descripcion": "Acceso preferente y zonas exclusivas cercanas al escenario.",
+      "precio": "35",
+      "imagen": "https://images.unsplash.com/photo-1559060680-36abfac01944?w=500&auto=format&fit=crop&q=60",
+      "testimonials": [
+        {
+          "author": "Carlos Martínez",
+          "text": "Increíblemente bien ambientado y con la mejor música. ¡Totalmente recomendable!"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Entrada VIP",
+      "descripcion": "Acceso a zonas VIP, barra libre y atención personalizada.",
+      "precio": "45",
+      "imagen": "https://plus.unsplash.com/premium_photo-1708589337972-4425197b0d2b?w=500&auto=format&fit=crop&q=60",
+      "testimonials": [
+        {
+          "author": "Alejandra Gómez",
+          "text": "¡Me encantó! Acceder a las zonas VIP y tener un trato especial hizo que mi experiencia fuera única."
+        },
+        {
+          "author": "Pedro Ruiz",
+          "text": "Sin duda, una experiencia de otro nivel. ¡El ambiente fue increíble!"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Entrada grupal",
+      "descripcion": "Descuento especial para grupos de más de 4 personas.",
+      "precio": "55",
+      "imagen": "https://images.unsplash.com/photo-1741886302174-9f399a034d49?w=500&auto=format&fit=crop&q=60",
+      "testimonials": [
+        {
+          "author": "Marta López",
+          "text": "Una de las mejores fiestas a las que he asistido. La música, el ambiente y la gente fueron espectaculares."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "Abono",
+      "descripcion": "Pase completo para los tres días del evento.",
+      "precio": "65",
+      "imagen": "https://images.unsplash.com/photo-1635070636690-d887c1a77e7b?w=500&auto=format&fit=crop&q=60",
+      "testimonials": [
+        {
+          "author": "Ricardo Fernández",
+          "text": "Si buscas una experiencia premium, esta es la entrada que necesitas. ¡Vale totalmente la pena!"
+        },
+        {
+          "author": "Sofía Hernández",
+          "text": "El acceso a las zonas premium hizo que mi experiencia fuera aún más impresionante. Sin duda, repetiré."
+        }
+      ]
+    }
+  ]
+}

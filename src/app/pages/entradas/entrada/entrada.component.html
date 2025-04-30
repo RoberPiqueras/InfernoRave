@@ -1,30 +1,30 @@
 <body>
-  <div class="container my-5" *ngIf="entradaData">
+  <div class="container my-5" *ngIf="entradaData as entrada">
     <div class="row">
       <!-- Columna principal con el detalle de la entrada -->
       <div class="col-md-10 col-lg-8 mx-auto">
-        
+
         <!-- Título -->
-        <h1 class="text-center mb-4 display-4 font-weight-bold">{{ entradaData.title }}</h1>
-  
+        <h1 class="text-center mb-4 display-4 font-weight-bold">{{ entrada.nombre }}</h1>
+
         <!-- Imagen de la entrada (dinámica) -->
         <div class="mb-4">
-          <img [src]="entradaData.image" class="img-fluid rounded shadow-lg d-block mx-auto" alt="{{ entradaData.title }}">
+          <img [src]="entrada.imagen" class="img-fluid rounded shadow-lg d-block mx-auto" alt="{{ entrada.nombre }}">
         </div>
-  
+
         <!-- Descripción de la entrada -->
         <div class="card shadow-lg border-0 mb-5" style="background-color: #2c2c2c;">
           <div class="card-body">
             <p class="card-text text-justify">
-              {{ entradaData.description }}
+              {{ entrada.descripcion }}
             </p>
           </div>
         </div>
-  
+
         <!-- Testimonios -->
-        <div *ngIf="entradaData.testimonials?.length > 0" class="mb-5">
+        <div *ngIf="entrada.testimonials" class="mb-5">
           <h3 class="text-white mb-4 text-center">Testimonios</h3>
-          <div *ngFor="let testimonial of entradaData.testimonials" class="card mb-3 border-0 shadow-sm" style="background-color: #1e1e1e;">
+          <div *ngFor="let testimonial of entrada.testimonials" class="card mb-3 border-0 shadow-sm" style="background-color: #1e1e1e;">
             <div class="card-body">
               <blockquote class="blockquote mb-0">
                 <p class="mb-2">"{{ testimonial.text }}"</p>
@@ -33,7 +33,7 @@
             </div>
           </div>
         </div>
-  
+
         <!-- Sección de Compra de entradas -->
         <div class="text-center mb-5">
           <h3 class="text-white mb-4">Compra tus Entradas</h3>
@@ -52,7 +52,7 @@
             </button>
           </div>
         </div>
-  
+
         <!-- Botón de volver a la página de entradas -->
         <div class="mt-4 text-center">
           <button class="btn btn-lg btn-outline-light rounded-pill shadow-sm px-4 py-2" (click)="goBack()">
@@ -62,7 +62,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Si no se encuentra la entrada -->
   <div *ngIf="!entradaData" class="container my-5">
     <div class="alert alert-warning text-center alert-dismissible fade show" role="alert">
@@ -70,5 +70,4 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   </div>
-  
 </body>
